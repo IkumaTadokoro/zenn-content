@@ -29,8 +29,11 @@ RubyMineはJetBrain社が開発したRubyとRails向けのIDE（統合開発環�
 
 価格はライセンス制で、個人利用の場合は¥1,030/月（年間払いの場合は¥10,300）です。
 
-- [RubyMine：JetBrainsによるRuby on Rails IDE](https://www.jetbrains.com/ja-jp/ruby/)
-- [初心者こそ！RubyMineで始めよう！ \- Speaker Deck](https://speakerdeck.com/ikumatadokoro/chu-xin-zhe-koso-rubyminedeshi-meyou)
+公式サイト：
+[RubyMine：JetBrainsによるRuby on Rails IDE](https://www.jetbrains.com/ja-jp/ruby/)
+
+初心者こそRubyMineで始めよう！（以前フィヨルドブートキャンプ内のLT会で布教した資料です）
+@[speakerdeck](f1c02840455b4d159d18563e517ee6b2)
 
 # この本の特徴
 
