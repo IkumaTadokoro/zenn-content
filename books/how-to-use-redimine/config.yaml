@@ -5,5 +5,5 @@ published: false # falseだと下書き
 price: 0 # 有料の場合200〜5000
 chapters:
   - about
-  - beginner
+  - preparation
 toc_depth: 2
