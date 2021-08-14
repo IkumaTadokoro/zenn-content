@@ -1,2 +1,4 @@
 node_modules
 .DS_Store
+.ruby-version
+image_move_and_rename.rb
