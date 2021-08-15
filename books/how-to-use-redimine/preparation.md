@@ -14,7 +14,7 @@ RubyMineはデフォルトでもかなり高機能で、1年に数回のマイ�
 プラグインの導入はRubyMine上のメニューから行います。
 ここでは次にご紹介する「Japanese LanguagePack/日本語化パック」を例にして、プラグインの導入方法を説明します。
 
-![](/images/how-to-install-plugin.gif)
+![](/images/preparation/how-to-install-plugin.gif)
 
 1. `⌘` + `,`を押して、Preferencesを開きます。
 2. 左側のメニューから「Plugins」を選択します。
@@ -25,7 +25,7 @@ RubyMineはデフォルトでもかなり高機能で、1年に数回のマイ�
 ここまでで、指定したプラグインを自分のRubyMineで使用することができるようになりました。
 ただし、インストールしただけではプラグインは無効状態ですので、これを有効化します。
 
-![](/images/how-to-activate_plugin.gif)
+![](/images/preparation/how-to-activate_plugin.gif)
 
 1. Preferences > Pluginsの中で、今度は「Installed」を選択します。
 2. 「Type / to see options」と記載されている検索窓に「japa」と入力します。
@@ -33,18 +33,18 @@ RubyMineはデフォルトでもかなり高機能で、1年に数回のマイ�
 4. 「OK」を選択すると、RubyMineを再起動して良いか聞かれるので「RESTART」を選択します（起動中のアプリケーションがあった場合、終了しても良いか聞かれますので、あらかじめ終了しておくか、「TERMINATE」を選択して強制終了してください）
 5. 再起動後画面を確認すると、プラグインが適用され、メニューが日本語になっています。
 
-![](/images/rubymine-210814-14:21:12.png)
+![](/images/preparation/rubymine-210814-14:21:12.png)
 
 以上がプラグインの導入方法になります。他のプラグインについても導入手順は同じです。
 なお、有効化したプラグインをやっぱり使用したくないと思った際は、「Installed」にあるプラグインのチェックを外すことで無効化できます。
 
 プラグイン自体を削除する場合は、各プラグインの設定（歯車）アイコンから「Uninstall」を選択してください。
 
-![](/images/rubymine-210814-15:08:43.png)
+![](/images/preparation/rubymine-210814-15:08:43.png)
 
 ## Japanese LanguagePack/日本語化パック
 
-![](/images/rubymine-210814-14:43:15.png)
+![](/images/preparation/rubymine-210814-14:43:15.png)
 
 - 概要：RubyMineのすべてのメニューを日本語化する
 - プラグイン公式：[Japanese Language Pack / 日本語言語パック \- IntelliJ IDEs Plugin \| JetBrains Marketplace](https://plugins.jetbrains.com/plugin/13964-japanese-language-pack------)
@@ -60,7 +60,7 @@ RubyMineはデフォルトでもかなり高機能で、1年に数回のマイ�
 
 ## Key Promoter X
 
-![](/images/rubymine-210814-14:41:59.png)
+![](/images/preparation/rubymine-210814-14:41:59.png)
 
 ### ショートカットのチェックと記録
 
@@ -72,11 +72,11 @@ RubyMineのメニューを使用した際に、もしショートカットがあ
 例えば、Project、つまりファイル一覧は`⌘` + `1`で開くことができるのですが、これをマウスクリックで開くと、ポップアップが表示されます。
 「おまえさんは180回もこのショートカットをミスってるね」というメッセージ付きです笑
 
-![](/images/rubymine-210814-14:47:03.png)
+![](/images/preparation/rubymine-210814-14:47:03.png)
 
 ショートカットをミスした回数の一覧と使用した回数の一覧は画面右側にある「Key PromoterX」のメニューから確認することができます。
 先程の`⌘` + `1`は180回ミスして、103回ショートカットで開いていることがわかります。
-![](/images/rubymine-210814-14:56:37.png)
+![](/images/preparation/rubymine-210814-14:56:37.png)
 
 もし「Key PromoterX」が表示されていない場合は、`Shift` + `Shift`でSearchEveryWhere（後述）を呼び出し、「KeyPormoterX」と検索してください。
 
@@ -87,11 +87,11 @@ RubyMineのメニューを使用した際に、もしショートカットがあ
 例えば下記は、ディスクの内容とRubyMine上で表示されている内容を同期する「Reload from Disk」というメニューを使用したケースです。
 こちらにはデフォルトショートカットが割り当てられていないため、ショートカットキー登録のお誘いが出ています。
 
-![](/images/rubymine-210814-14:50:08.png)
+![](/images/preparation/rubymine-210814-14:50:08.png)
 
 「Reload from Disk（使用したメニューの名前）」を選択することで、ショートカットキー登録のメニューに遷移することができます。
 
-![](/images/rubymine-210814-15:04:14.png)
+![](/images/preparation/rubymine-210814-15:04:14.png)
 
 ※ショートカットキーの登録方法については割愛します。
 詳細は[キーボードショートカットを設定する \| RubyMine](https://pleiades.io/help/ruby/configuring-keyboard-and-mouse-shortcuts.html)を参考にしてください。
@@ -102,7 +102,7 @@ RubyMineのメニューを使用した際に、もしショートカットがあ
 
 また画面左側の「Key Promoter X」にある「Snooze Notifications」からも通知を停止することが可能です。
 
-![](/images/rubymine-210814-15:10:21.png)
+![](/images/preparation/rubymine-210814-15:10:21.png)
 
 ## まとめ
 
