@@ -120,7 +120,7 @@ end
 
 ![](/images/basic-text-operation/how-to-use-context-action.gif)
 
-カーソルを当てることで「なぜ不要なのか」、（`⌥` + `Enter`）を実行することで、修正候補の提示と自動修正を行ってくれます。
+カーソルを当てることで「なぜ修正が必要なのか」、（`⌥` + `Enter`）を実行することで、修正候補の提示と自動修正を行ってくれます。
 
 検出される値は、Rubyそのものの文法としての誤り（RubyMineが認知）と、Rubocopが指摘するスタイルの修正の2種類があります。
 Rubocopの指摘は基本的に自動でONになっていますが、OFFになっている場合は、Preferences > Editor > Inspection > Rubocopにチェックを入れる必要があります。
@@ -143,12 +143,16 @@ Rubocopの指摘は基本的に自動でONになっていますが、OFFにな�
 デフォルトでは「In Project」がハイライトされていますが、「Module」「Directory」「Scope」と指定範囲を変更することも可能です。
 
 ---
-以下は使用頻度は低いですが、覚えているとたまに役立つのでご紹介します。
+
+:::message
+以下のショートカットは個人的に使用頻度が低いですが、覚えているとたまに役立つのでご紹介します。
+:::
 
 ## 大文字・小文字を切り替える（`⌘` + `Shift` + `U`）・スネークケース・キャメルケースの切り替え（`option` + `Shift` + `U`）
 
 （`⌘` + `Shift` + `U`）で選択箇所の大文字と小文字、（`option` + `Shift` + `U`）で選択箇所のスネークケース・キャメルケースを切り替えます
 
+![](/images/basic-text-operation/how-to-toggl-case.gif)
 ![](/images/basic-text-operation/how-to-toggl-case.gif)
 
 ## コードフォーマット（`⌘` + `⌥` + `L`）
