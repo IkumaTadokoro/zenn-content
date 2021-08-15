@@ -6,4 +6,6 @@ price: 0 # 有料の場合200〜5000
 chapters:
   - about
   - preparation
+  - beginner
+  - basic-file-operation
 toc_depth: 2
