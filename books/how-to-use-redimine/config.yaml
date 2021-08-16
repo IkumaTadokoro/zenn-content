@@ -11,4 +11,5 @@ chapters:
   - basic-file-operation
   - basic-text-operation
   - terminal
+  - run-source
 toc_depth: 3
