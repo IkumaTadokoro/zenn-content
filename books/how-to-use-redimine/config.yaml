@@ -10,4 +10,5 @@ chapters:
   - search-everywhere
   - basic-file-operation
   - basic-text-operation
+  - terminal
 toc_depth: 3
