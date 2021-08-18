@@ -13,4 +13,6 @@ chapters:
   - terminal
   - run-source
   - git-beginner
+  - intermediate
+  - run-anything
 toc_depth: 3
