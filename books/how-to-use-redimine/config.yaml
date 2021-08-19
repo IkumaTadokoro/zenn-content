@@ -15,4 +15,5 @@ chapters:
   - git-beginner
   - run-anything
   - refactoring
+  - debug
 toc_depth: 3
