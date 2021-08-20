@@ -16,4 +16,5 @@ chapters:
   - run-anything
   - refactoring
   - debug
+  - db-client
 toc_depth: 3
