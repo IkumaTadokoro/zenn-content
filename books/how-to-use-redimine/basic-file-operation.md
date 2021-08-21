@@ -180,6 +180,15 @@ GitHubにプッシュされているファイルの場合は、同様の手順�
 
 ![](/images/basic-file-operation/how-to-switch-tab.gif)
 
+## ナビゲーションバーに移動：Jump to NavigationBar（`⌘` + `↑`）
+
+（`⌘` + `↑`）を入力することで、パンくずリストにカーソルをあわせることができます。
+
+![](/images/basic-file-operation/how-to-jump-to-navigation-bar.gif)
+
+キーを入力した段階では、現在のファイル・ディレクトリにフォーカスしますが、方向キーの左右で階層を移動することができます。
+階層を指定して方向キーの↓を入力することで、その階層のファイル一覧を選択でき、`Enter`を押すことで、ファイルまたはディレクトリをオープンできます。
+
 ## ファイルとエディタの同期（Always Select Opened File）
 
 プロジェクトツールウィンドウの設定で「Always Select Opened File」をチェックします。
