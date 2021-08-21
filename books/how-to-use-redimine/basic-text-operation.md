@@ -127,6 +127,18 @@ Rubocopの指摘は基本的に自動でONになっていますが、OFFにな�
 
 ![](/images/basic-text-operation/rubymine-210815-20:09:46.png)
 
+## Insert Live template（`⌘` + `J`）
+
+![](/images/basic-text-operation/how-to-use-live-template.gif)
+
+（`⌘` + `J`）を入力することで、Live templateと呼ばれるRubyMineに登録されたスニペットを呼び出すことができます。
+表示された候補を方向キーで選択し、`Enter`を入力することで、選択したテンプレートを挿入します。
+
+![](/images/basic-text-operation/rubymine-210821-23:30:12.png)
+
+なお使用できるLive templateの一覧の確認および追加は Preferences（`⌘` + `,`） > Editor > Live Templates から行うことができます。
+
+
 ## 文字列を検索/置換する
 ### 開いているファイル内を検索/置換する（`⌘` + `F` / `⌘` + `R`）
 
@@ -142,11 +154,30 @@ Rubocopの指摘は基本的に自動でONになっていますが、OFFにな�
 
 デフォルトでは「In Project」がハイライトされていますが、「Module」「Directory」「Scope」と指定範囲を変更することも可能です。
 
----
+## Quick Documentation（`F1` | みたい箇所にカーソルホバー）
 
-:::message
-以下のショートカットは個人的に使用頻度が低いですが、覚えているとたまに役立つのでご紹介します。
-:::
+![](/images/basic-text-operation/how-to-use-quick-documentation.gif)
+
+メソッドや変数にカーソルを合わせて数秒待つ、もしくは`F1`を入力することで、簡単な定義情報を確認することができます。 引数の数や順番を確認したい時に便利です。
+
+## 定義元または使用箇所へジャンプ：Go to Declaration or Usage（`⌘` + `B`）
+
+![](/images/basic-text-operation/how-to-code-jump.gif)
+
+メソッドや変数にカーソルを合わせ（`⌘` + `B`）を入力するか、（`⌘` + `Click`）することで、そのメソッドや変数の定義元にジャンプすることができます。
+定義元がない場合はそれを使用している範囲が選択肢として表示されます。
+
+プロジェクトが大きくなってきたり、外部ライブラリを使用する場合に利用したい機能です。
+（特にRailsでは内部実装を確認するのにとても役立ちます）
+
+## レンズモード：Show code lens on scrollbar hover（スクロールバーにカーソルを合わせる）
+
+ファイルの行数が多い時に内容を確認する場合は、レンズ機能を使用するのが便利です（VSCodeのミニマップみたいなものです）。
+
+![](/images/basic-text-operation/how-to-use-lens.gif)
+
+スクロールバーの上にカーソルを合わせることで、実際にスクロールしなくても、ファイルの中身を覗き見ることができます。
+なおデフォルトでこの機能はONですが、OFFになっている場合はスクロールバーを右クリックして、「Show code lens on scrollbar hover」をチェックする必要があります。
 
 ## 大文字・小文字を切り替える（`⌘` + `Shift` + `U`）・スネークケース・キャメルケースの切り替え（`option` + `Shift` + `U`）
 
