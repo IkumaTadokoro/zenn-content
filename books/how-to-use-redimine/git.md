@@ -103,6 +103,13 @@ Stagedにファイルがない状態でも、直前のコミットメッセー�
 
 「COMMIT ANYWAY」を選択することで、チェックされた内容を無視してcommitすることができます。
 
+:::message
+ブランチを切って作業を始める際に、空コミットをしたい場合があるかもしれませんが、RubyMineでは空コミットが登録できません。 Run Anythingまたはターミナルから、従来通りコマンドを入力して空コミットを登録してください。
+```bash
+% git commit --allow-empty -m <コミットメッセージ>
+```
+:::
+
 ## バージョン管理ウィンドウ（`⌘` + `9`）
 
 （`⌘` + `9`）を入力もしくは画面下の「Git」タブを選択することで、バージョン管理ウィンドウを開くことができます。
@@ -178,8 +185,80 @@ Preferences（`⌘` + `,`） > Version Control > Github を選択し、「+」�
 ![](/images/git/how-to-push.gif)
 
 Push先はクリックすることで変更でき、まだ登録されていないリモートリポジトリの場合は、この画面から登録することも可能です。
+リモートリポジトリが作成されていない場合は、RubyMineが同名のブランチをリモートリポジトリに作成し、pushを行います。
 
 対象を確認後、「PUSH」を選択する（`⌘` + `Enter`）ことでPushを実行することができます。このとき、プルダウンから「Force Push」も選択可能です。
+
+## Pull Request
+
+Githubを開かずに、RubyMine上からPull Requestを閲覧・作成することが可能です。
+
+### Pull Requestツールウィンドウの表示
+
+RubyMine上でPull Request関連の機能を利用するには、Pull Requestツールウィンドウを有効にする必要があります。
+
+メニューバーから View > Tool Window > Pull Requestを選択し、Pull Requestツールウィンドウを有効化します。
+
+![](/images/git/rubymine-210821-18:41:00.png)
+
+以降は画面左にある「Pull Request」を選択することで、Pull Requestツールウィンドウを有効化することができます。
+
+![](/images/git/rubymine-210821-18:42:02.png)
+
+### Pull Requestの閲覧
+
+Pull Requestツールウィンドウを開くと、Pull Requestの一覧が表示されています。
+
+![](/images/git/rubymine-210821-18:49:40.png)
+
+初期状態では、「state:open」でフィルターがかかっていますが、クリアすることでクローズしたプルリクも参照することができます。
+また表示情報が古い場合には、`⌘` + `R`を入力することで、PR一覧を更新することができます。
+
+![](/images/git/how-to-filter-pr.gif)
+
+`key:検索値`の形で入力することで、state以外のフィルターをかけることができます。使用できるパラメータは`⌃` + `Space`で表示することができます。
+
+![](/images/git/how-to-show-pr-details.gif)
+
+一覧から対象のPRを選択することで、PRの詳細が表示され、エディタにConversationの詳細が表示されます。
+
+Pull Requestツールウィンドウでは、PRの詳細（Info）、PRに含まれるファイル（Files）、PRに含まれるコミット（Commits）を参照することができます。
+エディタに表示されているConversationでは、メッセージの編集・追記を行うことができます。
+
+![](/images/git/rubymine-210821-18:56:28.png)
+
+なおPRをGithub上で確認したいときや、Conversationsのタブを閉じてしまったときは、Pull Requestツールウィンドウを右クリックし、コンテキストメニューから選択してください。
+
+### Pull Requestの作成（`⌘` + `N`）
+
+![](/images/git/how-to-create-pr.gif)
+
+PRを作成するには、Pull Requestツールウィンドウ右上の「+」ボタンを選択（`⌘` + `N`）します。
+あとはGithubで作成する際と同じで、以下の内容を入力します。
+
+- PRするブランチ
+- タイトル
+- 内容
+- レビュワー
+- アサイン
+- ラベル
+
+通常のPRを作成する場合は「CREATE PULL REQUEST」を、ドラフトPRを作成するにはプルダウンから「Create Draft PULL REQUEST」を選択してPRを作成します。
+
+## Gistを作成する
+
+pushの番外編的なところで、RubyMineからGistを作成することもできます。
+
+![](/images/git/rubymine-210821-19:25:02.png)
+
+プロジェクトツールウィンドウで、Gistを作成するファイルを右クリックし、ポップアップメニュー > Create Gistを選択します。
+
+![](/images/git/rubymine-210821-19:28:01.png)
+![](/images/git/rubymine-210821-19:28:27.png)
+
+適宜選択してOKを選択することで、Gistを作成することができます。 
+
+なお、ディレクトリを選択してこのメニューを呼び出すことで、一つのGistに複数のファイルを一括でアップロードすることが可能です。
 
 ## fetch / pull / Update Project...（`⌘` + `T`）
 
@@ -198,3 +277,139 @@ Pullは通常のPullコマンド同様に、ブランチやオプションを指
 Update Projectについても、取り込み時にマージするか、リベースするかを選択することができます。
 
 ![](/images/git/rubymine-210817-15:02:44.png)
+
+## stash
+
+現在のブランチで作業している内容を一時退避したい場合には、stashコマンドを利用します。
+
+![](/images/git/how-to-stash.gif)
+
+RubyMineでは、Gitのポップアップメニュー（`⌃` + `V`） > Stash Changes... を選択することで起動できます。
+メッセージを入力し、「CREATE STASH」を選択することで作業を一時退避することができます。
+
+退避した作業の確認・復旧・削除を行いたい場合は、「Unstash Changes...」を利用します。
+
+![](/images/git/how-to-Unstash.gif)
+
+RubyMineでは、Gitのポップアップメニュー（`⌃` + `V`） > Unstash Changes... を選択することで起動できます。
+stashの一覧が表示されますので、対象のstashを選択して、必要に応じて以下から選択します。
+
+- 「VIEW」（確認）
+- 「DROP」（削除）
+- 「CLEAR」（stashの全件削除）
+- 「APPLY STASH」（stashの反映：`stash apply`）
+
+## reset
+
+作業を特定のコミットまで戻したい際には、resetコマンドを使用します。
+RubyMineではバージョン管理ウィンドウでコミットを指定することで、resetコマンドを起動します。
+
+![](/images/git/how-to-reset.gif)
+
+バージョン管理ウィンドウ（`⌘` + `9`） > 戻したい時点のコミットを右クリックし、コンテキストメニューから「Reset Current Branch to Here」を選択します。
+
+resetコマンドのオプション（Soft、Mix、Hard、Keep）が表示されますので、戻したい状態に応じて選択しOKを押します。
+
+:::message
+オプションの意味は通常のgit resetと同じです
+:::
+
+これで指定したオプションに応じて、作業内容が元に戻ります。SHA1 IDを`git reflog`で確認する必要がないので楽ちんですね。
+
+### Drop Commit
+
+![](/images/git/rubymine-210821-20:13:44.png)
+
+同じくバージョン管理ウィンドウでコミットを指定して利用できるメニューに「Drop Commit」というメニューがあります。 これを選択することで、指定したコミットを破棄することができます。
+（リポジトリ、ステージングエリア、作業ディレクトリから削除されるので注意してください。）
+
+なお、実際に動作しているコマンドは`git reset --hard`であるため、この章で紹介しました。
+
+
+## rebase
+
+### 作業ブランチ内でrebaseを行う
+
+```
+      A---B---C topic
+     /
+D---E main
+```
+
+```
+      A---B(B---C) topic
+     /
+D---E main
+```
+
+作業中のブランチにおいて、rebaseを行いたい場合は以下のように作業します。
+
+![](/images/git/rubymine-210821-20:50:28.png)
+
+1. バージョン管理ウィンドウでrebaseの起点にしたいコミットを右クリックし、コンテキストメニューから「Interactive Rabase from Here...」を選択します。
+
+![](/images/git/how-to-rebase-at-current-branch.gif)
+
+2. rebaseのためのウィンドウが開きます。各コミットが時系列で表示されており、ドラッグ & ドロップで順序を変更することが可能です。必要に応じてコミットを選択した状態で各ボタンを選択します。「Reset」を選択すると、行った操作をリセットすることができます。
+
+:::message
+git rebase -i 同様、以下の操作が可能です。
+- REWORDS（コミットメッセージの編集）
+- SQUASH（コミットを一つにまとめ、メッセージも修正する）
+- FIXUP（コミットを一つにまとめる。コミットメッセージは修正しない）
+- DROP（コミットの削除）
+:::
+
+3. 「START REBASING」を選択すると、rebaseが始まります。rebaseの結果コンフリクトが生じる場合は、エディタが立ち上がるので都度解消していきます。
+
+### ブランチ間でrebaseを行う
+
+```
+      A---B---C topic
+     /
+D---E---F---G main
+```
+
+```
+              A'---B'---C' topic
+             /
+D---E---F---G main
+```
+
+あるブランチでの変更を、現在のブランチに取り込みたい場合はブランチ一覧からrebaseを利用します。
+
+![](/images/git/rubymine-210821-21:11:00.png)
+
+取り込みたい作業内容のあるブランチを右クリックし、コンテキストメニュー > 「Rebase Current Onto Selected」を選択します。
+
+![](/images/git/rubymine-210821-21:13:00.png)
+
+選択したブランチでの作業内容が、カレントブランチにrebaseで取り込まれます。
+
+## cherry-pick
+
+別ブランチの特定のコミットを取り込みたい場合は、cherry-pickコマンドを使用します。
+RubyMineではバージョン管理ウィンドウでコミットを選択することで、cherry-pickコマンドを起動します。
+
+![](/images/git/how-to-show-all-branches-log.gif)
+
+必須ではありませんが、cherry-pickを行う場合は全ブランチのコミット履歴をみられるようにしておくことをおすすめします。
+
+取り込みたいコミットを右クリックし、コンテキストメニューから「Cherry-Pick」を選択します。 これで指定したコミットがカレントブランチに取り込まれます。
+
+## revert
+
+コミット済みの内容を打ち消ししたい場合はrevertコマンドを使います。
+
+RubyMineではバージョン管理ウィンドウでコミットを指定することで、revertコマンドを起動します。
+
+![](/images/git/how-to-revert.gif)
+
+バージョン管理ウィンドウ（`⌘` + `9`） > 打ち消したいコミットを右クリックし、コンテキストメニューから「Revert Commit」を選択します。 選択したコミットの打ち消しコミットが自動で作成されます。
+
+## 番外編：実行されているコマンドの確認
+
+RubyMineで行っているGit操作はGUI上で行うことができますが、「これをCUIで行ったらどうなるのだろうか？」と思う日もあるでしょう。
+そんな時は、バージョン管理ウィンドウの「Console」タブを開いてみましょう。
+
+これまで行われてきたGit操作がコマンドとして一覧化されています。IDE経由のため、実際のコマンドよりも少しいろいろと書いてありますが、最後の方だけを見れば、およそどんなコマンドが実行されているか理解することができるでしょう。
