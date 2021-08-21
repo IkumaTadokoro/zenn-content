@@ -1,10 +1,6 @@
 ---
-title: "Git操作（初級編）"
+title: "Git"
 ---
-
-:::message
-この章では基本的なGit操作を紹介します
-:::
 
 ## バージョン管理（Git）の有効化（Enable Version Control Integration）
 
