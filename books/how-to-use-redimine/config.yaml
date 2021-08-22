@@ -1,7 +1,7 @@
 title: "RubyMine入門"
-summary: "RubyMineを使い始めたけど、使いこなせない...という人向けの入門書"
+summary: "RubyMineを使い始めたけど、使いこなせないあなたへ送る入門書"
 topics: ["RubyMine", "Ruby", "Rails"] # トピック（5つまで）
-published: false # falseだと下書き
+published: true # falseだと下書き
 price: 0 # 有料の場合200〜5000
 chapters:
   - about
