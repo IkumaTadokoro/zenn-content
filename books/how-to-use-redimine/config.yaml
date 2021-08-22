@@ -11,11 +11,11 @@ chapters:
   - terminal
   - basic-file-operation
   - basic-text-operation
-  - refactoring
   - git
   - local-history
-  - run-anything
   - run-source
   - debug
+  - refactoring
+  - run-anything
   - db-client
 toc_depth: 3

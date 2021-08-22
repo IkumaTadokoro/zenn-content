@@ -2,7 +2,7 @@
 title: "Git"
 ---
 
-## バージョン管理（Git）の有効化（Enable Version Control Integration）
+## バージョン管理（Git）の有効化：Enable Version Control Integration
 
 RubyMineでバージョン管理（Git）の機能を使用するには、まず有効化する必要があります。
 
@@ -13,7 +13,7 @@ RubyMineでバージョン管理（Git）の機能を使用するには、まず
 
 以降、VCS用のメニューがGit専用のものに置き換わります。
 
-## ステージングに関する設定（Enable staging area）
+## ステージングに関する設定：Enable staging area
 
 コマンドラインでGitを利用している場合、
 
@@ -37,7 +37,7 @@ Preferences...（`⌘` + `,`）> Version Control > Git > 「Enable staging area�
 
 という理由から以降の説明では、「Enable staging area」がONになっている想定で説明を進めます。 なおOFFになっている場合も、「add」がないだけで他の箇所は同じです。
 
-## コミットツールウィンドウ（`⌘` + `0`）
+## コミットツールウィンドウ：Commit（`⌘` + `0`）
 
 （`⌘` + `0`）でコミットツールウィンドウを開くことができます。画面左にある「Commit」とあるタブを選択することでも開くことができます。
 
@@ -55,7 +55,7 @@ Preferences...（`⌘` + `,`）> Version Control > Git > 「Enable staging area�
 
 個人的にはファイル別に表示する方が見やすいですが、好みに合わせて切り替えてください。
 
-## diffの確認（`⌘` + `D`）
+## diffの確認：Show Diff（`⌘` + `D`）
 
 コミットツールウィンドウでファイルを選択し、「Show Diff（`⌘` + `D`）」を押すことで、エディタにdiffを表示することができます。
 変更がある箇所がハイライトされており、ガターにある「>>」「<<」を押すことで、エディタを見ながらadd（作業ディレクトリにある場合）・commit（ステージングエリアにある場合）をすることが可能です。
@@ -64,13 +64,13 @@ gifでは、作業ディレクトリでの作業内容を表示してエディ�
 
 ![](/images/git/how-to-show-diff-by.gif)
 
-## 作業ディレクトリから削除（`⌫`）
+## 作業ディレクトリから削除：Delete（`⌫`）
 
 ファイルを作業ディレクトリから削除する場合は、ファイルを右クリックし、コンテキストメニューから「Delete」（`⌫`）を選択します。
 
 ![](/images/git/how-to-delete-from-unstaged.gif)
 
-## add（`⌘` + `⌥` + `A`） / addの取り消し（`⌘` + `⌥` + `Z`）
+## add：Stage（`⌘` + `⌥` + `A`） / addの取り消し：Unstage（`⌘` + `⌥` + `Z`）
 
 addするにはUnstagedにあるファイルを右クリックし、コンテキストメニューから「Stage」（`⌘` + `⌥` + `A`）を選択します。
 また一度addした内容を取り消す（作業ディレクトリに戻す）には、コンテキストメニューから「UnStage」（`⌘` + `⌥` + `Z`）を選択します。
@@ -94,7 +94,7 @@ Stagedにファイルがない状態でも、直前のコミットメッセー�
 
 ![](/images/git/how-to-amend-commit.gif)
 
-### コミット前のチェック設定（Show Commit Option）
+### コミット前のチェック設定：Show Commit Option
 
 「Show Commit Option」からコミット時の設定を登録することができます。
 デフォルトではファイルの中に「TODO」が残っている場合は、コミットを中断して注意を促すようになっています。
@@ -110,7 +110,7 @@ Stagedにファイルがない状態でも、直前のコミットメッセー�
 ```
 :::
 
-## バージョン管理ウィンドウ（`⌘` + `9`）
+## バージョン管理ウィンドウ：Git（`⌘` + `9`）
 
 （`⌘` + `9`）を入力もしくは画面下の「Git」タブを選択することで、バージョン管理ウィンドウを開くことができます。
 
@@ -123,7 +123,7 @@ Stagedにファイルがない状態でも、直前のコミットメッセー�
 | 3    | 選択したコミットに含まれるファイル                                   |
 | 4    | コミットメッセージ                                                   |
 
-## ブランチを切る
+## ブランチを切る：New branch
 
 ブランチ一覧でベースとなるブランチを右クリックし、コンテキストメニューから「New Branch from Selected...」を選択します。
 ブランチ名を入力して「OK」を選択すると、新しいブランチが作成されます。
@@ -132,24 +132,32 @@ Stagedにファイルがない状態でも、直前のコミットメッセー�
 
 ## ブランチを切り替える
 
-ブランチ一覧でベースとなるブランチを右クリックし、コンテキストメニューから「Checkout」を選択します。
-
 ![](/images/git/how-to-switch-branch.gif)
 
-## ブランチを削除する
+ブランチ一覧でベースとなるブランチを右クリックし、コンテキストメニューから「Checkout」を選択します。
+
+![](/images/git/rubymine-210822-11:28:30.png)
+
+Search Everywhereを使用するのであれば、「Branches...」を検索することでブランチ一覧に遷移できます。
+
+![](/images/git/rubymine-210822-11:28:49.png)
+
+Checkoutしたいブランチを選択し、「Checkout」を選択することで切り替えが可能です。
+
+## ブランチを削除する：Delete
 
 ブランチ一覧でベースとなるブランチを右クリックし、コンテキストメニューから「Delete」を選択します。
 
 ![](/images/git/how-to-delete-branch.gif)
 
-## ブランチ名を変更する
+## ブランチ名を変更する：Rename...
 
 ブランチ一覧でベースとなるブランチを右クリックし、コンテキストメニューから「Rename..」を選択します。
 ブランチ名を入力して「OK」を選択すると、ブランチ名が変更されます。
 
 ![](/images/git/how-to-rename-branch.gif)
 
-## コミットメッセージを変更する（`F2`）
+## コミットメッセージを変更する：Edit Commit Messages...（`F2`）
 
 コミット一覧から変更対象のコミットを右クリックし、コンテキストメニューから「Edit Commit Message...」（`F2`）を選択します。
 コミットメッセージを入力して、「OK」を選択すると、コミットメッセージが変更されます。
@@ -164,7 +172,7 @@ Preferences（`⌘` + `,`） > Version Control > Github を選択し、「+」�
 
 ※だいぶ前にGithubアカウントを連携したので、この先を詳細に覚えておらずすみません...。おそらく表示される内容の通りに作業をすれば問題なく登録できるかと思います。
 
-## リモートリポジトリの設定
+## リモートリポジトリの設定：Manage Remotes
 
 メニューバー Git > Manage Remotes...を選択します。
 
@@ -189,25 +197,25 @@ Push先はクリックすることで変更でき、まだ登録されていな�
 
 対象を確認後、「PUSH」を選択する（`⌘` + `Enter`）ことでPushを実行することができます。このとき、プルダウンから「Force Push」も選択可能です。
 
-## Pull Request
+## Pull Requests
 
-Githubを開かずに、RubyMine上からPull Requestを閲覧・作成することが可能です。
+Githubを開かずに、RubyMine上からPull Requestsを閲覧・作成することが可能です。
 
-### Pull Requestツールウィンドウの表示
+### Pull Requestsツールウィンドウの表示：Pull Requests
 
 RubyMine上でPull Request関連の機能を利用するには、Pull Requestツールウィンドウを有効にする必要があります。
 
-メニューバーから View > Tool Window > Pull Requestを選択し、Pull Requestツールウィンドウを有効化します。
+メニューバーから View > Tool Window > Pull Requestsを選択し、Pull Requestsツールウィンドウを有効化します。
 
 ![](/images/git/rubymine-210821-18:41:00.png)
 
-以降は画面左にある「Pull Request」を選択することで、Pull Requestツールウィンドウを有効化することができます。
+以降は画面左にある「Pull Requests」を選択することで、Pull Requestsツールウィンドウを有効化することができます。
 
 ![](/images/git/rubymine-210821-18:42:02.png)
 
 ### Pull Requestの閲覧
 
-Pull Requestツールウィンドウを開くと、Pull Requestの一覧が表示されています。
+Pull Requestsツールウィンドウを開くと、Pull Requestsの一覧が表示されています。
 
 ![](/images/git/rubymine-210821-18:49:40.png)
 
@@ -222,7 +230,7 @@ Pull Requestツールウィンドウを開くと、Pull Requestの一覧が表�
 
 一覧から対象のPRを選択することで、PRの詳細が表示され、エディタにConversationの詳細が表示されます。
 
-Pull Requestツールウィンドウでは、PRの詳細（Info）、PRに含まれるファイル（Files）、PRに含まれるコミット（Commits）を参照することができます。
+Pull Requestsツールウィンドウでは、PRの詳細（Info）、PRに含まれるファイル（Files）、PRに含まれるコミット（Commits）を参照することができます。
 エディタに表示されているConversationでは、メッセージの編集・追記を行うことができます。
 
 ![](/images/git/rubymine-210821-18:56:28.png)
@@ -245,7 +253,7 @@ PRを作成するには、Pull Requestツールウィンドウ右上の「+」�
 
 通常のPRを作成する場合は「CREATE PULL REQUEST」を、ドラフトPRを作成するにはプルダウンから「Create Draft PULL REQUEST」を選択してPRを作成します。
 
-## Gistを作成する
+## Gistを作成する：Create Gist...
 
 pushの番外編的なところで、RubyMineからGistを作成することもできます。
 
@@ -412,4 +420,6 @@ RubyMineではバージョン管理ウィンドウでコミットを指定する
 RubyMineで行っているGit操作はGUI上で行うことができますが、「これをCUIで行ったらどうなるのだろうか？」と思う日もあるでしょう。
 そんな時は、バージョン管理ウィンドウの「Console」タブを開いてみましょう。
 
-これまで行われてきたGit操作がコマンドとして一覧化されています。IDE経由のため、実際のコマンドよりも少しいろいろと書いてありますが、最後の方だけを見れば、およそどんなコマンドが実行されているか理解することができるでしょう。
+![](/images/git/rubymine-210822-11:35:40.png)
+
+これまで行われてきたGitコマンドが時系列で表示されています。IDE経由のため、実際のコマンドよりも少しいろいろと書いてありますが、最後の方だけを見れば、およそどんなコマンドが実行されているか理解することができるでしょう。
