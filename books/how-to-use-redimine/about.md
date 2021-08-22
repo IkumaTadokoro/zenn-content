@@ -34,7 +34,7 @@ https://www.jetbrains.com/ja-jp/ruby/
 
 1. まずは「2. 事前準備」でRubyMineを習得するのに必要なプラグイン・名称を学ぶ
 2. 「3. Search Everywhere」を覚えて、各機能を名称指定で実行できるようにする
-3. 気になる章を読み、RubyMineの機能にどんなものがあるか、頭の中にインデックスを作る 
+3. 気になるChapterを読み、RubyMineの機能にどんなものがあるか、頭の中にインデックスを作る 
 4. 必要な時にSearch Everywhere経由で機能を使ってみる
 5. 使っているうちに機能／ショートカットを覚える
 

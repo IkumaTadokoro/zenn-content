@@ -128,7 +128,7 @@ RubyMineのメニューを使用した際に、もしショートカットがあ
 ## ウィンドウ
 
 RubyMineを開くと、画面内にいろいろなウィンドウが表示されています。
-以降の章では、RubyMineの公式呼称に則って説明を進めます。
+以降のChapterでは、RubyMineの公式呼称に則って説明を進めます。
 
 ![](/images/preparation/rubymine-210814-16:21:44.png)
 
