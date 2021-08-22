@@ -8,13 +8,14 @@ chapters:
   - preparation
   - beginner
   - search-everywhere
+  - terminal
   - basic-file-operation
   - basic-text-operation
-  - terminal
-  - run-source
-  - git
-  - run-anything
   - refactoring
+  - git
+  - local-history
+  - run-anything
+  - run-source
   - debug
   - db-client
 toc_depth: 3
