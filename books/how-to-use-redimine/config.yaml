@@ -9,13 +9,14 @@ chapters:
   - search-everywhere
   - basic-file-operation
   - basic-text-operation
+  - git
+  - local-history
   - run-source
   - debug
   - refactoring
-  - git
-  - local-history
   - terminal
   - run-anything
   - db-client
   - appearance
+  - catchup
 toc_depth: 2
