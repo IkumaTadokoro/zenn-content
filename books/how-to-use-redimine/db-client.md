@@ -75,4 +75,4 @@ ER図とまではいかないですが、対象のDBに登録されているテ�
 
 本Chapterで紹介した機能で大部分は賄えると思いますが、その他の機能も気になる方は以下を読んでもらえると理解が深まると思います。
 
-[データベースツールおよび SQL \| RubyMine](https://pleiades.io/help/ruby/relational-databases.html)
+https://pleiades.io/help/ruby/relational-databases.html
