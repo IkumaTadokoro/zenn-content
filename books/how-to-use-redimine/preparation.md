@@ -15,7 +15,7 @@ title: "事前準備"
 ## プラグイン
 
 RubyMineの機能を拡張してくれるツールのことです。
-RubyMineはデフォルトでもかなり高機能で、1年に数回のマイナーアップデートが実施されていますが、プラグインを利用することで、より細かい部分の生産性を向上させることができます。
+RubyMineはデフォルトでもかなり高機能で、1年に数回アップデートが実施されていますが、プラグインを利用することで、より細かい部分の生産性を向上させることができます。
 
 ## プラグインの導入方法
 
@@ -26,8 +26,8 @@ RubyMineはデフォルトでもかなり高機能で、1年に数回のマイ�
 
 1. `⌘` + `,`を押して、Preferencesを開きます。
 2. 左側のメニューから「Plugins」を選択します。
-3. 画面右側「MarketPlace」を選択します。
-4. 「Type / to see options」と記載されている検索窓に「japa」と入力します。
+3. 画面右側「Marketplace」を選択します。
+4. 「Type / to see options」と記載されている検索窓に「japan」と入力します。
 5. 表示された「Japanese LanguagePack/日本語化パック」を「INSTALL」します（GIFではインストール済のため、表示が異なります）
 
 ここまでで、指定したプラグインを自分のRubyMineで使用することができるようになりました。
@@ -36,9 +36,9 @@ RubyMineはデフォルトでもかなり高機能で、1年に数回のマイ�
 ![](/images/preparation/how-to-activate_plugin.gif)
 
 1. Preferences > Pluginsの中で、今度は「Installed」を選択します。
-2. 「Type / to see options」と記載されている検索窓に「japa」と入力します。
+2. 「Type / to see options」と記載されている検索窓に「japan」と入力します。
 3. 表示された「Japanese LanguagePack/日本語化パック」にチェックをし、「APPLY」をクリックします。
-4. 「OK」を選択すると、RubyMineを再起動して良いか聞かれるので「RESTART」を選択します（起動中のアプリケーションがあった場合、終了しても良いか聞かれますので、あらかじめ終了しておくか、「TERMINATE」を選択して強制終了してください）
+4. 「OK」を選択すると、RubyMineを再起動して良いか聞かれるので「RESTART」を選択します
 5. 再起動後画面を確認すると、プラグインが適用され、メニューが日本語になっています。
 
 ![](/images/preparation/rubymine-210814-14:21:12.png)
@@ -54,11 +54,11 @@ RubyMineはデフォルトでもかなり高機能で、1年に数回のマイ�
 
 ### Japanese LanguagePack/日本語化パック
 
-![](/images/preparation/rubymine-210814-14:43:15.png)
+https://plugins.jetbrains.com/plugin/13964-japanese-language-pack------
 
-- 概要：RubyMineのすべてのメニューを日本語化する
-- プラグイン公式：[Japanese Language Pack / 日本語言語パック \- IntelliJ IDEs Plugin \| JetBrains Marketplace](https://plugins.jetbrains.com/plugin/13964-japanese-language-pack------)
+RubyMineのすべてのメニューを日本語化するプラグイン
 
+:::details 概要
 その名の通り、RubyMineを日本語化してくれるパッケージです。
 「RubyMineのメニューが英語でわからん！」という方にはぜひおすすめです。
 
@@ -67,15 +67,15 @@ RubyMineはデフォルトでもかなり高機能で、1年に数回のマイ�
 個人的にはエディタの中でプログラミングに一般的に利用される英語を学ぶことができるという点から、英語設定のまま使用していますが、 そこは個人の好みで選んで良いでしょう。
 
 もちろんプラグインなので、ON/OFFの切り替えはいつでも可能です。
+:::
 
 ### Key Promoter X
 
-![](/images/preparation/rubymine-210814-14:41:59.png)
+https://plugins.jetbrains.com/plugin/9792-key-promoter-x
 
-#### ショートカットのチェックと記録
+ショートカットキーがあるメニューを、ショートカットキーなしで使用した場合にポップアップを表示するプラグイン
 
-- 概要：ショートカットキーがあるメニューを、ショートカットキーなしで使用した場合にポップアップを表示する。また使用回数とミス回数を記録する。
-- プラグイン公式：[Key Promoter X \- IntelliJ IDEs Plugin \| JetBrains Marketplace](https://plugins.jetbrains.com/plugin/9792-key-promoter-x)
+:::details ショートカットのチェックと記録
 
 RubyMineのメニューを使用した際に、もしショートカットがあるメニューであれば、画面右下にポップアップが表示されます。
 
@@ -89,9 +89,9 @@ RubyMineのメニューを使用した際に、もしショートカットがあ
 ![](/images/preparation/rubymine-210814-14:56:37.png)
 
 もし「Key PromoterX」が表示されていない場合は、`Shift` + `Shift`でSearchEveryWhere（後述）を呼び出し、「KeyPormoterX」と検索してください。
+:::
 
-#### ショートカットキーの登録促進
-
+:::details ショートカットキーの登録促進
 またショートカットが設定されていないプラグインの場合は、「ショートカットを作りませんか？」という提示が出てきます。
 
 例えば下記は、ディスクの内容とRubyMine上で表示されている内容を同期する「Reload from Disk」というメニューを使用したケースです。
@@ -105,25 +105,29 @@ RubyMineのメニューを使用した際に、もしショートカットがあ
 
 ※ショートカットキーの登録方法については割愛します。
 詳細は[キーボードショートカットを設定する \| RubyMine](https://pleiades.io/help/ruby/configuring-keyboard-and-mouse-shortcuts.html)を参考にしてください。
+:::
 
-#### ポップアップを停止する
+:::details ポップアップを停止する
 
 ポップアップがうざったく感じたら、ポップアップに表示されている「Disable alert for this shortcut」を選択することで、通知をオフにすることができます。
 
 また画面左側の「Key Promoter X」にある「Snooze Notifications」からも通知を停止することが可能です。
 
 ![](/images/preparation/rubymine-210814-15:10:21.png)
+:::
 
 ### IDE Features Trainer
 
-![](/images/preparation/rubymine-210822-11:58:22.png)
+https://plugins.jetbrains.com/plugin/8554-ide-features-trainer
 
-初期設定でインストールされている、JetBrains社が作成した、IDEの機能を学習するためのプラグインです。
+初期設定でインストールされている、IDEの機能を学習するためのプラグイン
 
+:::details 概要
 ![](/images/preparation/rubymine-210822-12:34:27.png)
 
 メニューバーのHelp > Learn IDE Featuresを選択することで、チュートリアル画面が開きます。
 全編英語にはなりますが、RubyMineの基本的な操作を、サンプルを交えながら実践できるため、英語が苦手でなければ試して見るのもいいと思います。
+:::
 
 ## ウィンドウ
 
@@ -141,4 +145,4 @@ RubyMineを開くと、画面内にいろいろなウィンドウが表示され
 | 5    | 実行ツールウィンドウ         |
 | 6    | ステータスバー               |
 
-なお頻出は「コンテキストメニュー」ですが、これは右クリックした際に表示されるメニューのことです。
+なお本書での頻出用語は「コンテキストメニュー」ですが、これは右クリックした際に表示されるメニューのことです。
