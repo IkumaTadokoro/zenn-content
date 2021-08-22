@@ -7,14 +7,15 @@ chapters:
   - about
   - preparation
   - search-everywhere
-  - terminal
   - basic-file-operation
   - basic-text-operation
-  - git
-  - local-history
   - run-source
   - debug
   - refactoring
+  - git
+  - local-history
+  - terminal
   - run-anything
   - db-client
-toc_depth: 3
+  - appearance
+toc_depth: 2
