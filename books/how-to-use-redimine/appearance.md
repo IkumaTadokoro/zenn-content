@@ -2,7 +2,7 @@
 title: "見た目を変更する"
 ---
 
-# エディタの見た目を変える（スイッチャー経由）：Quick Switch Scheme（`⌘` + \`）
+## エディタの見た目を変える（スイッチャー経由）：Quick Switch Scheme（`⌘` + \`）
 
 このChapterではRubyMineの見た目を変える方法について紹介します。
 
