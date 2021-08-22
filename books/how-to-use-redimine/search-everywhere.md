@@ -2,8 +2,6 @@
 title: "Search Everywhere"
 ---
 
-この章では、RubyMine固有の機能「Search Everywhere」を紹介します。
-
 ## Search Everywhere（`Shift` + `Shift`）
 
 RubyMineのどこの画面にいても、（`Shift` + `Shift`）を入力することで、「Search Everywhere」を起動することができます。
