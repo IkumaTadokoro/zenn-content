@@ -9,11 +9,11 @@ chapters:
   - search-everywhere
   - basic-file-operation
   - basic-text-operation
+  - refactoring
   - git
   - local-history
-  - run-source
   - debug
-  - refactoring
+  - run-source
   - terminal
   - run-anything
   - db-client
