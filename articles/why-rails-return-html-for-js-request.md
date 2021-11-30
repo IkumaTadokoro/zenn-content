@@ -437,7 +437,7 @@ https://github.com/rails/rails/blob/main/actionview/lib/action_view/lookup_conte
 ソースの通りですが、リクエストにのってきた拡張子が`js`の場合、`html`も`format`とするような分岐が入っています。
 そのため、`format`に`js`を指定した場合は、`js`もしくは`html`のファイルを探索しにいき、VIEWをレンダリングするというような挙動になります。
 
-### ここまでのまとめ
+### ここまでのまとめ（How?）
 
 - RailsはControllerで`render`が定義されていない場合、対応するVIEWテンプレートを暗黙的に`render`する
 - 対応するVIEWテンプレートは以下の条件で探索される
