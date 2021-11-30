@@ -190,7 +190,7 @@ Rails 6.1.4.1
 
 ## What?（どういう事象なのか）
 
-まずはどういう状況になっているのか、ログを確認してみます。
+まずはどういう状況になっているのか、それぞれのケースのログを確認してみます。
 
 ```log:development.log(index.html)
 Started GET "/home/index.html" for 127.0.0.1 at 2021-11-30 16:08:16 +0900
@@ -275,9 +275,10 @@ JSONの場合は例外が発生しているので、HTMLとJSのその後を比�
 
 ![](/images/why-rails-return-html-for-js-request/index-html-js.png)
 
-「Railsでリクエストのフォーマットに`js`を指定したら、Railsは何をレスポンスとして返すのか」という問いに対する答えは、 「指定したコントローラーのアクションに紐づくVIEWファイルのみを表示する」ということになります。
+つまり「Railsでリクエストのフォーマットに`js`を指定したら、Railsは何をレスポンスとして返すのか」という問いに対する答えは、 「指定したコントローラーのアクションに紐づくVIEWファイルのみを表示する」ということになります。
 
 事象は理解できましたが、では「`js`を指定しているのにもかかわらず、どうやってHTMLが表示される」のでしょうか。
+
 この原因を探るために、今度はRailsのレンダリングの仕組みを追ってみます。
 
 ### ここまでのまとめ（What?）
@@ -336,7 +337,7 @@ end
 
 https://github.com/rails/rails/blob/main/actionpack/lib/action_controller/metal/basic_implicit_render.rb#L6
 
-`super.tap { default_render unless performed? }`の部分で、`render`が実行されている（=`performed?`）のであれば、`default_render`が呼び出されます。
+`super.tap { default_render unless performed? }`の部分は、実装したController内で明示的に`render`が実行されている（=`performed?`）のであれば、`default_render`が呼び出す仕組みです。
 
 `default_render`の実装自体は`ActionController::ImplicitRender`で実装されています。
 
@@ -448,7 +449,7 @@ https://github.com/rails/rails/blob/main/actionview/lib/action_view/lookup_conte
 
 ## Why?（なぜJavaScriptを指定した際に、HTMLもテンプレートの探索条件になるのか）
 
-ここまでどうやってこのような挙動になるかをみてきましたが、ではなぜこのような挙動をするのでしょうか。
+ここまでどうやってこのような挙動になるかをみてきました。ではなぜRailsはこのような仕様になっているのでしょうか。
 それはSJRを利用した際に、js.erbファイル内で定義しているHTMLのパーシャルをformat指定なしでレンダリングできるようにするためです。
 
 ### SJRとは
@@ -508,11 +509,12 @@ Railsのソースやリポジトリを掘り進めていくのはだいぶ骨の
 
 ## PR
 
-現場の即戦力になれるプログラミングスクール、FJORD BOOT CAMPはこちらです！
+今回の記事は[フィヨルドブートキャンプ Part 1 Advent Calendar 2021](https://adventar.org/calendars/6331)」の3日目の記事でした。
+現場の即戦力になれるプログラミングスクール、FJORD BOOT CAMPはこちらから！
 
 https://bootcamp.fjord.jp/
 
-今回Railsのソースを追うのにはRuby専用IDEであるRubyMineを使いました！
+今回、Railsのソースを追うのに、Ruby専用IDEであるRubyMineを使いました！
 Railsのソースは私のような初心者には静的リーディングが非常に難しかったのですが、ブレークポイントとウォッチを併用しながら、動的に読んでいくことで最後まで辿り着けました。
 
 ![](/images/why-rails-return-html-for-js-request/rubymine.png)
