@@ -1,21 +1,51 @@
 ---
-title: "【Rails】リクエストのフォーマットに`js`を指定したら、Railsは何をレスポンスとして返すのか" # 記事のタイトル
+title: "【Rails】RailsはリクエストのフォーマットにJavaScriptを指定しても、HTMLを返すことがある"
 emoji: "🤔" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["rails", "ruby"] # タグ。["markdown", "rust", "aws"]のように指定する
 published: false # 公開設定（falseにすると下書き）
 ---
 
-この記事は「[フィヨルドブートキャンプ Part 1 Advent Calendar 2021](https://adventar.org/calendars/6331)」の3日目の記事です。 
+この記事は「[フィヨルドブートキャンプ Part 1 Advent Calendar 2021](https://adventar.org/calendars/6331)」の3日目の記事です。
+
+https://adventar.org/calendars/6331
+
 Part2もあります→「[フィヨルドブートキャンプ Part 2 Advent Calendar 2021](https://adventar.org/calendars/6360)」
 
+https://adventar.org/calendars/6360
+
 Part1、昨日の記事はken_c_loさんの「」、Part2、昨日の記事は「aaa」さんの「」でした!
+
+## 概要
+
+現在私はFJORD BOOT CAMPというプログラミングスクールに参加して、チーム開発を経験しています。  
+今回の記事では、その中で遭遇したバグをきっかけに、Railsのビューレンダリングについての仕様を調査した結果について解説しようと思います。
+
+- 解説すること：
+  - リクエストのフォーマットにJavaScriptを含めた場合のRailsのビューレンダリングの挙動
+  - リクエストのフォーマットにかかわらず、特定の形式のファイルを返す方法
+- 環境：Rails 6.1.4.1
+
+## TL:DR;
+
+- SJRの中でHTMLのパーシャルを描画するために、フォーマットにjsが指定された場合は、JavaScriptとHTMLのビューを探索する
+- SJRを利用していない場合は、対応するアクションに紐づくHTMLのテンプレートが採用される
+- 上記挙動はあくまでアクションに紐づくテンプレートの話であり、application.html.erbは`js`のみで探索されるため適用されない（=CSS等が適用されない）
+- `resources: ... format: "html"`と書くことで、HTML固定でレスポンスを返すことができる
+
+---
 
 ## 問題
 
 突然ですが、ここに簡単なログイン画面を実装したRailsアプリがあります。
 
 ![](/images/why-rails-return-html-for-js-request/index-html-normal.png)
+
+```ruby:routes.rb
+Rails.application.routes.draw do
+  get 'home/index'
+end
+```
 
 ```ruby:home_controller.rb
 class HomeController < ApplicationController
@@ -135,13 +165,14 @@ end
 
 :::
 
-Railsの規約に則り、`http://0.0.0.0:3000/home/index`にアクセスすることで`home/index.html.erb`が表示されます。
+`http://0.0.0.0:3000/home/index`にアクセスすることで`home/index.html.erb`が表示されます。
 
 ### どんなリクエストがかえってくると思いますか？
 
 さて先の通り、`http://0.0.0.0:3000/home/index`にアクセスした場合は、`home/index.html.erb`（HTML）が表示されます。
 
-この場合は何もformatを設定していないため、デフォルトフォーマットであるHTMLが描画されますが、formatを指定すると、そのformatに応じたレスポンスを返すことができます。
+この場合はリクエストの中でformatを設定していないため、デフォルトのフォーマットであるHTMLのファイルが描画されますが、`http://0.0.0.0:3000/home/index.xml`のように拡張子を指定してリクエストを投げると、そのformatに応じたレスポンスを返すことができます。
+
 なお、指定されたformatに合致するファイルが存在しない場合は、`ActionController::UnknownFormat`が発生します。
 
 では次のように拡張子を指定してアクセスした場合は、どんなリクエストが返ってくるでしょうか？
@@ -175,18 +206,6 @@ Railsの規約に則り、`http://0.0.0.0:3000/home/index`にアクセスする�
 では3はどういうことでしょうか？
 
 JSについてもフォーマットが存在しないため、`ActionController::UnknownFormat`が発生すると想像しましたが、なんだか中途半端に表示されています（CSSが適用されていない...?）
-
-今回はこの「Railsでリクエストのフォーマットに`js`を指定したら、Railsは何をレスポンスとして返すのか」について調べてみました！
-
-## 環境
-
-Rails 6.1.4.1
-
-## TL:DR;
-
-- SJRの中でHTMLのパーシャルを描画するために、フォーマットにjsが指定された場合は、JavaScriptとHTMLのビューを探索する
-- SJRを利用していない場合は、対応するアクションに紐づくHTMLのテンプレートが採用される
-- 上記挙動はあくまでアクションに紐づくテンプレートの話であり、application.html.erbは`js`のみで探索されるため適用されない（=CSS等が適用されない）
 
 ## What?（どういう事象なのか）
 
@@ -498,12 +517,26 @@ https://github.com/rails/rails/pull/39476
 - `js`をフォーマットに指定した時に`html`も検索条件としてVIEWファイルを探索するのは、SJRを利用した際に、js.erbファイル内で定義しているHTMLのパーシャルをformat指定なしでレンダリングできるようにするため
 - この挙動自体に対してIssueがいくつか投げかけられているが、今のところ修正の兆しはない
 
+## 対応案
+
+FJORD BOOT CAMPではいろいろなものにタグをつける機能が実装されており、そのタグ名がURLに利用されていました（`/users/tags/タグ名`）。
+
+今回私が遭遇したのは、タグ名が`.js`で終わる場合に、表示が崩れるというIssueでした。
+これはここまでで述べてきた通り、`.js`がformatとして認識され、一方SJRは使っていないために、該当のアクションに紐づくHTMLが描画されていたためです。
+
+タグ名がいかなる形式であっても、HTMLを返すようにしたいので、下記のように`routes.rb`の中でfomatを指定し、解決しました。
+
+```ruby:routes.rb
+Rails.application.routes.draw do
+  get 'home/index', format: "html"
+end
+```
+
+https://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Resources.html#method-i-resources
+
 ## おわりに
 
-私が参加しているFJORD BOOT CAMPでは、実際に使っているEラーニング用アプリを、生徒自身がスクラムチームの一員となって開発していく課題があります。
-その中で対応していたとあるバグIssueの原因が、まさに今回調べた内容でした。
-
-バグの対応自体は1行で済んでしまうようなものでしたが、「どうしてこういう挙動になるのか」「なぜこういう仕様なのか」が気になり、個人的に調査をはじめました。
+対応自体は1行で済んでしまうようなものでしたが、「どうしてこういう挙動になるのか」「なぜこういう仕様なのか」が気になり、個人的に調査をはじめました。
 
 Railsのソースやリポジトリを掘り進めていくのはだいぶ骨の折れる作業でしたが、なんとか諦めずに最後まで読み切ることができてよかったです。
 
