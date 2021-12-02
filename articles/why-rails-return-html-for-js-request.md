@@ -6,15 +6,15 @@ topics: ["rails", "ruby"] # タグ。["markdown", "rust", "aws"]のように指�
 published: false # 公開設定（falseにすると下書き）
 ---
 
-この記事は「[フィヨルドブートキャンプ Part 1 Advent Calendar 2021](https://adventar.org/calendars/6331)」の3日目の記事です。
+:::message
 
-https://adventar.org/calendars/6331
-
+この記事は「[フィヨルドブートキャンプ Part 1 Advent Calendar 2021](https://adventar.org/calendars/6331)」の3日目の記事です。 
 Part2もあります→「[フィヨルドブートキャンプ Part 2 Advent Calendar 2021](https://adventar.org/calendars/6360)」
 
-https://adventar.org/calendars/6360
+---
 
-昨日の記事はken_c_loさんの「[フィヨルドブートキャンプでデザインのメンターをはじめて1ヶ月経ちました](https://ken-c-lo.hatenadiary.org/entry/2021/12/02/122055)」でした。
+昨日はken_c_loさんの「[フィヨルドブートキャンプでデザインのメンターをはじめて1ヶ月経ちました](https://ken-c-lo.hatenadiary.org/entry/2021/12/02/122055)」でした。
+:::
 
 ## 概要
 
