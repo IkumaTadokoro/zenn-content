@@ -529,12 +529,14 @@ https://github.com/rails/rails/pull/39476
 
 ## 対応案
 
+最後にここまでの事象に対して、HTMLを固定で返すようにするにはどうすればいいかのというお話です。
+
 FJORD BOOT CAMPではいろいろなものにタグをつける機能が実装されており、そのタグ名がURLに利用されていました（`/users/tags/タグ名`）。
 
 今回私が遭遇したのは、タグ名が`.js`で終わる場合に、表示が崩れるというIssueでした。
 これはここまでで述べてきた通り、`.js`がformatとして認識され、一方SJRは使っていないために、該当のアクションに紐づくHTMLだけが描画されていたためです。
 
-タグ名がいかなる形式であっても、HTMLを返すようにしたいので、下記のように`routes.rb`の中でfomatを指定し、解決しました。
+タグ名がいかなる形式であっても、HTMLを返すようにしたいので、下記のように`routes.rb`の中で`format`を指定し、解決しました。
 
 ```ruby:routes.rb
 Rails.application.routes.draw do
@@ -553,7 +555,7 @@ Railsのソースやリポジトリを掘り進めていくのはだいぶ骨の
 ## PR
 
 今回の記事は[フィヨルドブートキャンプ Part 1 Advent Calendar 2021](https://adventar.org/calendars/6331)」の3日目の記事でした。
-現場の即戦力になれるプログラミングスクール、FJORD BOOT CAMPはこちらから！
+プログラミングスクール、FJORD BOOT CAMPはこちらから！
 
 https://bootcamp.fjord.jp/
 
