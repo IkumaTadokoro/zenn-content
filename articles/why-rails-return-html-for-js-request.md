@@ -31,7 +31,7 @@ Part1、昨日の記事はken_c_loさんの「」、Part2、昨日の記事は�
 - SJRの中でHTMLのパーシャルを描画するために、フォーマットにjsが指定された場合は、JavaScriptとHTMLのビューを探索する
 - SJRを利用していない場合は、対応するアクションに紐づくHTMLのテンプレートが採用される
 - 上記挙動はあくまでアクションに紐づくテンプレートの話であり、application.html.erbは`js`のみで探索されるため適用されない（=CSS等が適用されない）
-- `resources: ... format: "html"`と書くことで、HTML固定でレスポンスを返すことができる
+- `resources ... format: "html"`と書くことで、HTML固定でレスポンスを返すことができる
 
 ---
 
