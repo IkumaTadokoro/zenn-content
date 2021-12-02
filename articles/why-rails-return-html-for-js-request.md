@@ -14,7 +14,7 @@ Part2もあります→「[フィヨルドブートキャンプ Part 2 Advent Ca
 
 https://adventar.org/calendars/6360
 
-Part1、昨日の記事はken_c_loさんの「」、Part2、昨日の記事は「aaa」さんの「」でした!
+昨日の記事はken_c_loさんの「[フィヨルドブートキャンプでデザインのメンターをはじめて1ヶ月経ちました](https://ken-c-lo.hatenadiary.org/entry/2021/12/02/122055)」でした。
 
 ## 概要
 
