@@ -211,6 +211,8 @@ JSについてもフォーマットが存在しないため、`ActionController:
 
 ## What?（どういう事象なのか）
 
+### ログを確認してみる
+
 まずはどういう状況になっているのか、それぞれのケースのログを確認してみます。
 
 ```log:development.log(index.html)
@@ -267,6 +269,8 @@ JSONの場合は例外が発生しているので、HTMLとJSのその後を比�
 - `js`をフォーマットに指定した場合は、`layouts/layouts/application.html.erb`が描画されていない
 
 ということがわかりました。
+
+### application.htmlが読み込まれていない = stylesheetが読み込まれていない
 
 `application.html.erb`にはスタイルシートのエントリーポイントが設定されているため、これが読み込まれなかったことでCSSが適用されていない、素の`index.html.erb`が表示されたようです。
 
