@@ -308,7 +308,7 @@ JSONの場合は例外が発生しているので、HTMLとJSのその後を比�
 
 ### ここまでのまとめ（What?）
 
-- Railsでリクエストのフォーマットに`js`を指定したら、Railsは「指定したコントローラーのアクションに紐づくVIEWファイルのみを表示する」
+- Railsでリクエストのフォーマットに`js`を指定したら、Railsは「指定したコントローラーのアクションに紐づくHTMLファイルのみを表示する」
 - CSSやJavaScriptのエントリーポイントである`application.html.erb`が描画されないため、CSSやJavaScriptが適用されていない、素のHTMLが表示されているように見える
 
 ## How?（どうやって`js`を指定してもHTMLを表示しているのか）
@@ -362,7 +362,9 @@ end
 
 https://github.com/rails/rails/blob/main/actionpack/lib/action_controller/metal/basic_implicit_render.rb#L6
 
-`super.tap { default_render unless performed? }`の部分は、実装したController内で明示的に`render`が実行されている（=`performed?`）のであれば、`default_render`が呼び出す仕組みです。
+`super.tap { default_render unless performed? }`の部分は、実装したController内で明示的に`render`が実行されている（=`performed?`）のであれば、`default_render`を呼び出す仕組みです。
+
+先ほど確認した通り、Controllerには何も処理がありませんので、`default_render`が実行されることになります。
 
 `default_render`の実装自体は`ActionController::ImplicitRender`で実装されています。
 
@@ -412,6 +414,7 @@ end
 ```
 
 ブラウザに描画された内容と照らし合わせると、`html`と`js`をフォーマットに指定した場合は最初の分岐に、`json`を指定した場合は2つ目の分岐に入っているようです。
+
 続いて、条件となっている`template_exists`の処理を追います。
 
 ```ruby
@@ -420,6 +423,7 @@ def default_render
 ```
 
 `action_name.to_s`には今回の場合だと`index`が、`_prefixes`には`%w[home application]`が格納されています。
+
 つまり、呼び出しているアクションとコントローラー（継承元含む）が設定されているわけです。
 Railsはこれらの値を使ってVIEWテンプレートを探しにいきます。
 
@@ -440,7 +444,7 @@ https://github.com/rails/rails/blob/main/actionview/lib/action_view/lookup_conte
 
 ### formatの指定
 
-さて、検索の際に色々なオプションが指定されるのですが、その一つが`format`です。
+さて、VIEWテンプレートの検索の際に色々なオプションが指定されるのですが、その一つが`format`です。
 基本的にはリクエストにのってきた拡張子だけが`format`として設定されますが、`js`の場合だけは分岐処理が入っています。
 
 ```ruby:lookup_context.rb
@@ -528,7 +532,7 @@ https://github.com/rails/rails/pull/39476
 FJORD BOOT CAMPではいろいろなものにタグをつける機能が実装されており、そのタグ名がURLに利用されていました（`/users/tags/タグ名`）。
 
 今回私が遭遇したのは、タグ名が`.js`で終わる場合に、表示が崩れるというIssueでした。
-これはここまでで述べてきた通り、`.js`がformatとして認識され、一方SJRは使っていないために、該当のアクションに紐づくHTMLが描画されていたためです。
+これはここまでで述べてきた通り、`.js`がformatとして認識され、一方SJRは使っていないために、該当のアクションに紐づくHTMLだけが描画されていたためです。
 
 タグ名がいかなる形式であっても、HTMLを返すようにしたいので、下記のように`routes.rb`の中でfomatを指定し、解決しました。
 
