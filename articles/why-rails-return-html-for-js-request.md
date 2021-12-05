@@ -362,7 +362,7 @@ end
 
 https://github.com/rails/rails/blob/main/actionpack/lib/action_controller/metal/basic_implicit_render.rb#L6
 
-`super.tap { default_render unless performed? }`の部分は、実装したController内で明示的に`render`が実行されている（=`performed?`）のであれば、`default_render`を呼び出す仕組みです。
+`super.tap { default_render unless performed? }`の部分は、実装したController内で明示的に`render`が実行されていない（=`unless performed?`）のであれば、`default_render`を呼び出す仕組みです。
 
 先ほど確認した通り、Controllerには何も処理がありませんので、`default_render`が実行されることになります。
 
