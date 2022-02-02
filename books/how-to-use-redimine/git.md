@@ -362,7 +362,7 @@ D---E main
 
 ![](/images/git/rubymine-210821-20:50:28.png)
 
-1. バージョン管理ウィンドウでrebaseの起点にしたいコミットを右クリックし、コンテキストメニューから「Interactive Rabase from Here...」を選択します。
+1. バージョン管理ウィンドウでrebaseの起点にしたいコミットを右クリックし、コンテキストメニューから「Interactive Rebase from Here...」を選択します。
 
 ![](/images/git/how-to-rebase-at-current-branch.gif)
 

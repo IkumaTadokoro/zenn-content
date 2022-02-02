@@ -88,7 +88,7 @@ RubyMineのメニューを使用した際に、もしショートカットがあ
 先程の`⌘` + `1`は180回ミスして、103回ショートカットで開いていることがわかります。
 ![](/images/preparation/rubymine-210814-14:56:37.png)
 
-もし「Key PromoterX」が表示されていない場合は、`Shift` + `Shift`でSearchEveryWhere（後述）を呼び出し、「KeyPormoterX」と検索してください。
+もし「Key PromoterX」が表示されていない場合は、`Shift` + `Shift`でSearchEveryWhere（後述）を呼び出し、「KeyPromoterX」と検索してください。
 :::
 
 :::details ショートカットキーの登録促進

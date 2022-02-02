@@ -12,7 +12,7 @@ title: "Run Anything"
 
 ## ターミナルやSearch EveryWhereでの実行との違い
 
-コマンドはターミナルまたはSearch EvereWhereからでも実行できますが、Run Anythingを使用したコマンド実行は以下の違いがあります。
+コマンドはターミナルまたはSearch EveryWhereからでも実行できますが、Run Anythingを使用したコマンド実行は以下の違いがあります。
 
 ### コマンドの実行に特化している
 
