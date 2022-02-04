@@ -24,7 +24,7 @@ TailwindCSSを使ってみようと思って、[Tailwind Play](https://play.tail
 - Rails: 6.1.4.1
 - TailwindCSS: 2
 
-## リポジトリ
+## [リポジトリ](https://github.com/IkumaTadokoro/rails6-and-tailswind-sample)
 
 今回の記事で扱った内容は、以下のリポジトリで確認できます。
 
