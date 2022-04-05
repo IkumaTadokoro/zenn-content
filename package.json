@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"no test\"",
+    "start": "npx zenn preview -p $PORT",
+    "watch": "npx zenn preview -w"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "keywords": [],
   "author": "",
