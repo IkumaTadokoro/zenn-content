@@ -2,7 +2,7 @@
 title: "「無職になったらいくらかかる？」を調べるサービスをリリースしました！"
 emoji: "💰" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
-topics: ["rails", "ruby", "vue", "Docker", "個人開発"] # タグ。["markdown", "rust", "aws"]のように指定する
+topics: ["rails", "ruby", "vue", "tailwindcss", "個人開発"] # タグ。["markdown", "rust", "aws"]のように指定する
 published: false # 公開設定（falseにすると下書き）
 ---
 
@@ -36,7 +36,7 @@ https://github.com/IkumaTadokoro/quitcost
 
 「退職予定月」「年齢」「所得」などいくつかの質問に答えることで、 無職になった際の「国民健康保険」「国民年金」「住民税」の金額を簡単に知ることができます。
 
-**主な使用技術**：Ruby / Ruby on Rails / Vue.js / PostgreSQL / Docker / GitHub Actions / Heroku
+**主な使用技術**：Ruby / Ruby on Rails / Vue.js / Tailwind CSS / PostgreSQL / Docker / GitHub Actions / Heroku
 
 ## サービスを作ったきっかけ
 
