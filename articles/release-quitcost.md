@@ -3,7 +3,7 @@ title: "「無職になったらいくらかかる？」を調べるサービス
 emoji: "💰" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["rails", "ruby", "vue", "tailwindcss", "個人開発"] # タグ。["markdown", "rust", "aws"]のように指定する
-published: false # 公開設定（falseにすると下書き）
+published: true # 公開設定（falseにすると下書き）
 ---
 
 昨今、エンジニア界隈への転職は賑わっていますよね。「今の仕事をやめて、勉強に専念して、未経験から転職するぞ！」という方も多くいらっしゃると思います。
