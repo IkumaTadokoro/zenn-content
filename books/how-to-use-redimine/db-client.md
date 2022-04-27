@@ -16,14 +16,48 @@ RubyMineには複数のツールウィンドウがありますが、画面右側
 
 データベースをオープンするためには、接続情報を登録する必要があります。
 
-Databaseツールウィンドウ > + > DataSource から使用するDBを選択して、接続情報を登録することもできますが、ここではRailsで作成されたデータベースファイルを使用します。
+ここではSQLiteとPostgreSQLを用いた接続を例にして、接続情報の登録方法を説明します。その他のDBの接続方法について、基本的にはPostgreSQLの接続方法を参考にしてください。
 
-![](/images/db-client/rubymine-210820-10:33:46.png)
+### SQLiteでの接続方法
 
-マイグレーションを実施した際に`db`ディレクトリに作成されたデータベースファイルを開くことで、DB接続が完了します。
-sqlite3を利用しているのであれば、`development.sqlite3`を開くことで、接続情報が登録され、データベースツールウィンドウと、DBを操作するためのコンソールが開きます。
+![](/images/db-client/db-open.png)
 
-![](/images/db-client/rubymine-210820-10:36:33.png)
+「Database」タブを選択して、データベースツールウィンドウを開き、「+」 > 「Data Source」 > 「SQLite」の順に選択します。
+
+![](/images/db-client/sqlite-connection.png)
+
+設定ダイアログが開くので、「File」に接続に使用するファイルを指定します（「…」からファイルエクスプローラを開いて直接選択することができます）。
+(画像はデータベース接続先を`db/development.sqlite3`としている例です)
+
+![](/images/db-client/sqlite-connection-test.png)
+
+ファイルを指定したら、「Test Connection」を選択して疎通確認を行います。「Succeed」と出れば接続完了です。
+
+### PostgreSQLでの接続方法
+
+サンプルとして次のような設定で作成されたDBに対して、接続を行います。
+
+```yaml
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: postgre_sample_development
+  username: postgre_sample
+  host: localhost
+  port: 5432
+```
+
+![](/images/db-client/db-open-pg.png)
+
+「Database」タブを選択して、データベースツールウィンドウを開き、「+」 > 「Data Source」 > 「PostgreSQL」の順に選択します。
+
+![](/images/db-client/pg-connection.png)
+
+設定ダイアログが開くので、HostやPortの情報を接続先のDBに合わせて設定します。設定が完了したら、「Test Connection」を選択して疎通確認を行い、「Succeed」と出れば接続完了です。
 
 ## オブジェクトの参照
 
