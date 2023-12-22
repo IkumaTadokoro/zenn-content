@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no test\"",
+    "new": "npx zenn new:article",
+    "preview": "npx zenn preview --port 2377",
     "start": "npx zenn preview -p $PORT",
     "watch": "npx zenn preview -w"
   },
