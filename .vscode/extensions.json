@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "taichi.vscode-textlint"
+        "taichi.vscode-textlint",
+        "zenn.zenn-preview"
     ]
 }
